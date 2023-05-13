@@ -18,7 +18,7 @@ import { RootStackParamsList } from "../navigator/RootNavigator";
 import { Image } from "@rneui/themed";
 import { Input } from "@rneui/base";
 import { useQuery } from "@apollo/client";
-import { GET_ORDERS } from "../graphql/queries";
+import { GET_CUSTOMERS, GET_ORDERS } from "../graphql/queries";
 import CustomerCard from "../components/CustomerCard";
 
 export type CustomerScreenNavigationProp = CompositeNavigationProp<
@@ -31,7 +31,7 @@ const CustomerScreen = () => {
   const navigation = useNavigation();
 
   const [input, setInput] = useState<string>("");
-  const { loading, error, data } = useQuery(GET_ORDERS);
+  const { loading, error, data } = useQuery(GET_CUSTOMERS);
 
   useLayoutEffect(() => {
     navigation.setOptions({
