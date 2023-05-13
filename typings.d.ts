@@ -36,3 +36,8 @@ type Order = {
 type OrderResponse = {
     value: Order;
 }
+
+type CustomerResponse = {
+    name: ID;
+    value: Customer;
+}
