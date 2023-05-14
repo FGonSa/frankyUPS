@@ -54,11 +54,17 @@ const CustomerScreen = () => {
         containerStyle={tw("bg-white pt-5 pb-0 px-10")}
       />
 
-      {data?.getCustomers.map(
-        ({ name: ID, value: { email, name } }: CustomerResponse) => (
-          <CustomerCard key={ID} email={email} name={name} userId={ID} />
+    {/**
+     * El Map renderiza los pedidos.
+     * El filter permite filtrar a partir de lo escrito en el input del buscador
+     */}
+      {data?.getCustomers
+        ?.filter((customer: CustomerList) =>
+          customer.value.name.includes(input)
         )
-      )}
+        .map(({ name: ID, value: { email, name } }: CustomerResponse) => (
+          <CustomerCard key={ID} email={email} name={name} userId={ID} />
+        ))}
     </ScrollView>
   );
 };
