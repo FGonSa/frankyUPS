@@ -41,13 +41,18 @@ const ModalScreen = () => {
       </TouchableOpacity>
 
       <View style={{ marginTop: 10 }}>
-        <View style={[tw("py-5 border-b"), {borderColor: "#59C1CC"}]}>
-          <Text style={[tw("text-center text-xl font-bold"), {color: "#59C1CC"}]}>{name}</Text>
+        <View style={[tw("py-5 border-b"), { borderColor: "#59C1CC" }]}>
+          <Text
+            style={[tw("text-center text-xl font-bold"), { color: "#59C1CC" }]}
+          >
+            {name}
+          </Text>
           <Text style={[tw("text-center italic text-sm")]}>deliveries</Text>
         </View>
       </View>
 
       <FlatList
+        contentContainerStyle ={{ paddingBottom: 200 }}
         data={orders}
         keyExtractor={(order) => order.trackingId}
         renderItem={({ item: order }) => <DeliveryCard order={order} />}

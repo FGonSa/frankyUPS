@@ -29,6 +29,7 @@ const CustomerCard = ({ email, name, userId }: Props) => {
       <Card containerStyle={tw("p-5 rounded-lg")}>
         <View>
           <View style={tw("flex-row justify-between")}>
+            <View>
             <Text style={tw("text-2xl font-bold")}>{name}</Text>
             <Text style={[tw("text-sm"), { color: "#59C1CC" }]}>
               ID: {userId}
@@ -47,6 +48,7 @@ const CustomerCard = ({ email, name, userId }: Props) => {
               size={50}
             />
           </View>
+        </View>
         </View>
         <Card.Divider />
         <Text>{email}</Text>
