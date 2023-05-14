@@ -29,16 +29,16 @@ const TabNavigator = () => {
 
   return (
     <Tab.Navigator screenOptions={({route}) => ({
-        tabBarActiveTintColor: "blue",
+        tabBarActiveTintColor: "#59C1CC",
         tabBarInactiveTintColor: "grey",
         tabBarIcon: ({focused, color, size}) => {
             if (route.name === 'Customers'){
                 return (
-                    <Icon name="users" type="entypo" color={focused ? "blue" : "gray"} />
+                    <Icon name="users" type="entypo" color={focused ? "#59C1CC" : "gray"} />
                 )
             }else if(route.name === "Orders"){
                 return (
-                    <Icon name="box" type="entypo" color={focused ? "red" : "gray"} />
+                    <Icon name="box" type="entypo" color={focused ? "#EB6A7C"  : "gray"} />
                 )
             }
         }

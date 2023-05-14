@@ -18,18 +18,15 @@ export type OrdersScreenNavigationProp = CompositeNavigationProp<
   NativeStackNavigationProp<RootStackParamsList>
 >;
 const OrdersScreen = () => {
+
   const tw = useTailwind();
   const navigation = useNavigation<OrdersScreenNavigationProp>();
   const [ascending, setAscending] = useState<boolean>(false);
   const { loading, error, orders } = useOrders();
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
-      tabBarLabel: ({ focused, color }) => (
-        <Text style={{ color: focused ? "#EB6A7C" : color, fontSize: 10 }}>
-          Orders
-        </Text>
-      ),
     });
   }, []);
 

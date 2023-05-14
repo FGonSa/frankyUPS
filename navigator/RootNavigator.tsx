@@ -30,10 +30,7 @@ const RootNavigator = () => {
       </RootStack.Group>
 
       <RootStack.Group>
-        <RootStack.Screen
-          name="Order"
-          component={OrderScreen}
-        />
+        <RootStack.Screen name="Order" component={OrderScreen} />
       </RootStack.Group>
     </RootStack.Navigator>
   );
