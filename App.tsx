@@ -5,6 +5,7 @@ import utilities from './tailwind.json';
 import { NavigationContainer } from '@react-navigation/native';
 import RootNavigator from './navigator/RootNavigator';
 import { ApolloClient, InMemoryCache, ApolloProvider, } from '@apollo/client';
+import { LogBox } from 'react-native';
 
 const client = new ApolloClient({
   uri: 'https://teeli.stepzen.net/api/husky-data/__graphql',
@@ -13,6 +14,8 @@ const client = new ApolloClient({
 });
 
 export default function App() {
+  LogBox.ignoreAllLogs(true); //Ignorar los Warnings Amarillos de EXPO
+
   return (
     // @ts-ignore - TailwindProvider
     <TailwindProvider utilities={utilities}>
